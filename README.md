@@ -10,18 +10,20 @@ Additionally, you may select a manual server URL to test it out yourself.
 
 - TODO
     - [x] Make download_speed_test()
-    Issue : SSL Cert Verification Error on some servers.
-    Need to check each server for capability
+    #### Issue : SSL Cert Verification Error on some servers.
+    #### Need to check each server for capability
+
     - [x] Test download_speed_test() on URLs
 
     - [x] Make upload_speed_test()
     - [] Test upload_speed_test()
-    Issues expected : Many servers may not allow upload test
+    #### Issues expected : Many servers may not allow upload test
 
     - [] Make response_time_test()
     - [] Test response_time_test()
 
     - [] Make server selection: Domestic / Global
+
     Changing plan - there's only one server working for me right now.
 
     - [] Make GUI
@@ -30,36 +32,36 @@ Additionally, you may select a manual server URL to test it out yourself.
 - Servers to check
     - Domestic
         1. KT
-        URL: http://speed.kt.com/
-        download : No available testfile - site provides their own speedtester
-        upload : 
+        #### URL: http://speed.kt.com/
+        #### download : No available testfile - site provides their own speedtester
+        #### upload : 
         2. SK Broadband
-        URL: http://myspeed.skbroadband.com/
-        download : No available testfile - site provides their own speedtester
-        upload : 
+        #### URL: http://myspeed.skbroadband.com/
+        #### download : No available testfile - site provides their own speedtester
+        #### upload : 
         3. LG U+
-        URL: http://speed.uplus.co.kr/ftp_test/100MB.dat
-        download : Error-404
-        upload : 
+        #### URL: http://speed.uplus.co.kr/ftp_test/100MB.dat
+        #### download : Error-404
+        #### upload : 
         4. NIA
-        URL: http://speed.nia.or.kr
-        download : No available testfile - site provides their own speedtester
-        upload : 
+        #### URL: http://speed.nia.or.kr
+        #### download : No available testfile - site provides their own speedtester
+        #### upload : 
     - Global
         1. Hetzner
-        URL: https://speed.hetzner.de/100MB.bin (Germany)
-        download : SSL Cert Verification Error
-        upload : 
+        #### URL: https://speed.hetzner.de/100MB.bin (Germany)
+        #### download : SSL Cert Verification Error
+        #### upload : 
         2. DigitalOcean
-        URL1: https://speedtest-nyc1.digitalocean.com/100mb.test (New York)
-        URL2: https://speedtest-sgp1.digitalocean.com/100mb.test (Singapore)
-        download : Non-existent domain
-        upload : 
+        #### URL1: https://speedtest-nyc1.digitalocean.com/100mb.test (New York)
+        #### URL2: https://speedtest-sgp1.digitalocean.com/100mb.test (Singapore)
+        #### download : Non-existent domain
+        #### upload : 
         3. OVH
-        URL: http://proof.ovh.net/files/100Mb.dat (France)
-        download : Working!
-        upload : 
+        #### URL: http://proof.ovh.net/files/100Mb.dat (France)
+        #### download : Working!
+        #### upload : 
         3. Cloudflare
-        URL: https://speed.cloudflare.com/ (France)
-        download : No available testfile - Website automatically tests net speed
-        upload : 
+        #### URL: https://speed.cloudflare.com/ (France)
+        #### download : No available testfile - Website automatically tests net speed
+        #### upload : 
