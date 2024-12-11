@@ -27,7 +27,7 @@ Additionally, you may select a manual server URL to test it out yourself.
     #### Make sure you use https: http may cause Error 301 (Moved Permanently)
 
     - [] Make server selection: Domestic / Global
-    #### Changing plan - there's only one server(OVH.net) working for me right now.
+    #### Changing plan. No domestic server found suitable for now
 
     - [] Make GUI
 
@@ -37,34 +37,26 @@ Additionally, you may select a manual server URL to test it out yourself.
         1. KT
         #### URL: http://speed.kt.com/
         #### download : No available testfile - site provides their own speedtester
-        #### upload : 
         2. SK Broadband
         #### URL: http://myspeed.skbroadband.com/
         #### download : No available testfile - site provides their own speedtester
-        #### upload : 
         3. LG U+
         #### URL: http://speed.uplus.co.kr/ftp_test/100MB.dat
         #### download : Error-404
-        #### upload : 
         4. NIA
         #### URL: http://speed.nia.or.kr
         #### download : No available testfile - site provides their own speedtester
-        #### upload : 
     - ## Global
         1. Hetzner
         #### URL: https://speed.hetzner.de/100MB.bin (Germany)
         #### download : SSL Cert Verification Error
-        #### upload : 
         2. DigitalOcean
         #### URL1: https://speedtest-nyc1.digitalocean.com/100mb.test (New York)
         #### URL2: https://speedtest-sgp1.digitalocean.com/100mb.test (Singapore)
         #### download : Non-existent domain
-        #### upload : 
-        3. *OVH*
+        3. OVH
         #### URL: http://proof.ovh.net/files/100Mb.dat (France)
         #### download : Working!
-        #### upload : 
         3. Cloudflare
         #### URL: https://speed.cloudflare.com/ (France)
         #### download : No available testfile - Website automatically tests net speed
-        #### upload : 
