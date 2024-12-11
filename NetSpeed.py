@@ -1,17 +1,18 @@
 import requests
 import time
+import tkinter
 
 def download_speed_test(url, chunk_size=1024):
     try:
-        total_bytes = 0
         # HTTPS GET
+        total_bytes = 0
         response = requests.get(url, stream=True)
         start_time = time.time()
 
         # 응답 상태 확인
         if response.status_code != 200:
             raise ValueError(f"Invalid response from server: {response.status_code}")
-
+    
         # 응답 수신
         for chunk in response.iter_content(chunk_size=chunk_size):
             total_bytes += len(chunk)
@@ -58,13 +59,51 @@ def upload_speed_test(url, data_size_mb=10):
     except Exception as e:
         print(f"Error: {e}")
 
+def response_time_test(url):
+    try:
+        start_time_rtt = time.time()
+        rtt_response = requests.head(url)
+        rtt = (time.time() - start_time_rtt) * 1000  # ms
 
+        if rtt_response.status_code != 200:
+            raise ValueError(f"Invalid response from server: {rtt_response.status_code}")
 
-
+        print(f"Ping: {rtt:.2f} ms")
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 if __name__ == "__main__":
-    #url = "http://proof.ovh.net/files/10Mb.dat"
-    #download_speed_test(url)
+    url = ""
+    dataSize = 10
+    #url = "https://proof.ovh.net/files/10Mb.dat"
+    #download_speed_test("https://proof.ovh.net/files/10Mb.dat")
     #upload_speed_test(url="")
+    response_time_test("https://proof.ovh.net")
+
+
+    pass
+
+
+
+
+def temp():
+    window = tkinter.Tk()
+
+    window.title("NetSpeed_Checker")
+    window.geometry("800x600+100+100")
+    window.resizable(False, False)
+
+    button_download_speed_test = tkinter.Button(window, overrelief="solid", width=50, text="다운로드 속도 측정")
+    button_download_speed_test.pack()
+    
+
+
+    button_10MB = tkinter.Button(window)
+    button_100MB = tkinter.Button(window)
+    button_1GB = tkinter.Button(window)
+
+
+    
+    window.mainloop()
     pass
