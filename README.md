@@ -2,12 +2,13 @@
     - Version: 0.1
     - Open Source Software Project
     - Used ChatGPT for research / coding assist
+    - tkinter reference : https://076923.github.io/posts/Python-tkinter-1/
 
 This project aims to test your network speed(Mbps) and response time.
 
 By running the program you will download/upload a file of designated size from/to public server, namely OVH.net
 
-Additionally, you may select a manual server URL to test it out yourself.
+Additionally, you may select a server URL manually to test it out yourself.
 
 
 - TODO
