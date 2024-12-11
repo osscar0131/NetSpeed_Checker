@@ -27,9 +27,10 @@ def download_speed_test(url, chunk_size=1024):
         #print(f"Total downloaded: {total_bytes / (1024 * 1024):.2f} MB")
         #print(f"Elapsed time: {elapsed_time:.2f} seconds")
         #print(f"Speed: {speed_mbps:.2f} Mbps")
-        return speed_mbps
+        return f"Speed: {speed_mbps:.2f} Mbps"
     except Exception as e:
-        print(f"Error: {e}")
+        #print(f"Error: {e}")
+        return f"Error: {e}"
 
 
 def upload_speed_test(url, data_size_mb=10):
@@ -55,9 +56,10 @@ def upload_speed_test(url, data_size_mb=10):
         #print(f"Elapsed time: {elapsed_time:.2f} seconds")
         #print(f"Speed: {speed_mbps:.2f} Mbps")
 
-        return speed_mbps
+        return f"Speed: {speed_mbps:.2f} Mbps"
     except Exception as e:
-        print(f"Error: {e}")
+        #print(f"Error: {e}")
+        return f"Error: {e}"
 
 def response_time_test(url):
     try:
@@ -69,22 +71,30 @@ def response_time_test(url):
             raise ValueError(f"Invalid response from server: {rtt_response.status_code}")
 
         #print(f"Ping: {rtt:.2f} ms")
-        return rtt
+        return f"Ping: {rtt:.2f} ms"
     except Exception as e:
-        print(f"Error: {e}")
+        #print(f"Error: {e}")
+        return f"Error: {e}"
 
 
 def start_download_test():
-    speed = download_speed_test(test_url)
-    result_text.insert(tkinter.END, f"Speed: {speed:.2f} Mbps" + "\n")
+    result = download_speed_test(test_url)
+    result_text.insert(tkinter.END, result + "\n")
 
 def start_upload_test():
-    speed = upload_speed_test(test_url)
-    result_text.insert(tkinter.END, f"Speed: {speed:.2f} Mbps" + "\n")
+    result = upload_speed_test(test_url)
+    result_text.insert(tkinter.END, result + "\n")
 
 def start_response_test():
-    rtt = response_time_test(test_url)
-    result_text.insert(tkinter.END, f"Ping: {rtt:.2f} ms" + "\n")
+    result = response_time_test(test_url)
+    result_text.insert(tkinter.END, result + "\n")
+
+def clear_results():
+    result_text.delete("1.0", tkinter.END)
+
+def change_url():
+    test_url = URL_text.get().strip()
+    result_text.insert(tkinter.END, f"URL has been changed to: "+ test_url + "\n")
 
 
 if __name__ == "__main__":
@@ -113,18 +123,34 @@ if __name__ == "__main__":
     button_response_time_test = tkinter.Button(window, overrelief="solid",
                                                 width=40, command=start_response_test,
                                                 text="Ping 측정")
+    button_clear_results = tkinter.Button(window, overrelief="solid",
+                                          width=6, command=clear_results,
+                                          text="지우기")
+
     
     # Result text
     result_text = tkinter.Text(window, wrap="word", height=20, width=70)
+
+
+    # Test url
+    URL_text = tkinter.Entry(window, width=70)
+    URL_text.insert(tkinter.END, test_url)
+    button_change_url = tkinter.Button(window, overrelief="solid",
+                                       width=6, command=change_url,
+                                       text="변경")
     
     
     
     # Place all labels
-    button_download_speed_test.place(relx=0.32, rely=0.1)
-    button_upload_speed_test.place(relx=0.32, rely=0.17)
-    button_response_time_test.place(relx=0.32, rely=0.24)
-    result_text.place(relx = 0.19, rely=0.5)
+    button_download_speed_test.place(relx=0.32, rely=0.2)
+    button_upload_speed_test.place(relx=0.32, rely=0.27)
+    button_response_time_test.place(relx=0.32, rely=0.34)
+    
+    result_text.place(relx = 0.19, rely=0.45)
+    button_clear_results.place(relx=0.81, rely=0.85)
 
+    URL_text.place(relx=0.19, rely= 0.1)
+    button_change_url.place(relx=0.81, rely=0.095)
 
     # Start main window
     window.mainloop()

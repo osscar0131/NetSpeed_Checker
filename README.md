@@ -30,7 +30,8 @@ Additionally, you may select a server URL manually to test it out yourself.
     - [] Make server selection: Domestic / Global
     #### Changing plan. No domestic server found suitable for now
 
-    - [] Make GUI
+    - [x] Make functional GUI
+    - [] Decorate GUI
 
 
 - Servers to check
